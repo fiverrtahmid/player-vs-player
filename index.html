@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Player vs Player</title>
+		<style>
+			* {
+				margin: 0 auto;
+				padding: 0;
+			}
+			#instructionsBtn {
+				position: absolute;
+				top: 20px;
+				left: 20px;
+				cursor: pointer;
+				background-color: blue;
+				color: aliceblue;
+				border: none;
+				padding: 10px 20px;
+				border-radius: 5px;
+			}
+			.container {
+				display: flex;
+				flex-direction: column;
+				gap: 10px;
+				align-items: center;
+				justify-content: center;
+				height: 100vh;
+			}
+			.instruction {
+				position: absolute;
+				top: 0;
+				left: 0;
+				padding: 50px;
+				background-color: antiquewhite;
+				height: 100vh;
+				transition: 500ms;
+			}
+			#closeBtn {
+				position: absolute;
+				top: 50px;
+				right: 50px;
+				cursor: pointer;
+				height: 20px;
+				width: 20px;
+				padding: 10px;
+				color: white;
+				text-align: center;
+				border-radius: 100%;
+				background-color: rgb(24, 37, 224);
+			}
+			#closeBtn:hover {
+				color: white;
+				background-color: red;
+			}
+			.d-none {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<button type="button" id="instructionsBtn">Instructions</button>
+		<div class="instruction d-none">
+			<span id="closeBtn">X</span>
+			<h1>Instruction:</h1>
+			<ol type="1">
+				<li>All buttons and input are disabled</li>
+				<li>To activate Enter Winign Score Then Submit it</li>
+				<li>Player round will be start randomly after submit</li>
+				<li>
+					Any player's score is matched with the wining score the
+					player will be win.
+				</li>
+				<li>
+					After ending one wining please reset and set wining score
+					and play again!
+				</li>
+			</ol>
+		</div>
+		<div class="container">
+			<h1>Let's play luck game</h1>
+			<h2 id="winingScoreEle">Wining Score:</h2>
+			<div class="players">
+				<span id="playerOneEle">Player One Score: </span><br />
+				<span id="playerTwoEle">Player Tow Score: </span>
+			</div>
+			<div class="form">
+				<input
+					type="number"
+					name="winingScoreInp"
+					id="winingScoreInp"
+					placeholder="Enter Winign Score"
+				/>
+				<input type="submit" value="submit" id="submit" />
+				<input type="reset" value="reset" id="reset" />
+			</div>
+			<div class="buttons">
+				<button type="button" id="playerOneBtn">Player One</button>
+				<button type="button" id="playerTwoBtn">Player Two</button>
+			</div>
+			<h1 id="resultElt"></h1>
+			<div class="notice"></div>
+		</div>
+		<script src="main.js"></script>
+	</body>
+</html>
